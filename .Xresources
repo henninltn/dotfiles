@@ -1,0 +1,85 @@
+! do not scroll without output
+URxvt*scrollTtyOutput: false
+
+! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
+URxvt*scrollWithBuffer: True
+
+! scroll back to the bottom on keypress
+URxvt*scrollTtyKeypress: True
+
+! disable scroll buffer
+URxvt*secondaryScreen: 1
+URxvt*secondaryScroll: 0
+
+! for rxvt-unicode-better-wheel-scrolling
+URxvt*secondaryWheel: 1
+
+! colors
+URxvt*foreground: rgb:c3/97/d8
+URxvt*background: rgb:00/00/00
+
+! fonts
+URxvt*font: xft:Ricty\ Diminished\ Regular\ Nerd\ Font\ Complete:pixelsize=24
+URxvt*boldFont: xft:Ricty\ Diminished\ Regular\ Nerd\ Font\ Complete:pixelsize=24
+
+
+!
+! Perl Extension
+!
+
+URxvt.perl-ext-common: default,matcher,tabbed,fullscreen,resize-font,xim-onthespot
+
+!
+! enable to click URL
+!
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+! 
+URxvt.keysym.C-Delete: perl:matcher:last
+URxvt.keysym.M-Delete: perl:matcher:list
+
+!
+! simple tab
+!
+! URxvt.perl-ext-common: ...,tabbed,...
+!
+! here is the default key bindings
+!
+! Shift+Down:  new tab
+! Shift+Left:  move to the left tab
+! Shift+Right: move to the right tab
+! Ctl+Left:    move the tab to left
+! Ctl+Right:   move the tab to right
+! Ctl+d:       close the tab
+URxvt.tabbed.tabbar-fg: 2
+URxvt.tabbed.tabbar-bg: 0
+URxvt.tabbed.tab-fg: 3
+URxvt.tabbed.tab-bg: 0
+
+!
+! fullscreen
+!
+! package urxvt-fullscreen is required
+! URxvt.perl-ext-common: ...,fullscreen,...
+URxvt.keysym.F11: perl:fullscreen:switch
+
+! resize font
+! package urxvt-resize-font-git is required 
+! URxvt.perl-ext-common: ...,resize-font,...
+!
+! here is the default key bindings
+! Ctrl++:       increase the font size: this is 'resize-font:bigger'
+! Ctrl+Shift+=: increase the font size
+! Ctrl+-:       decrease the font size: this is 'resize-font:smaller'
+! Ctrl+=:       reset the size
+! Ctrl+?:       display the current size
+!
+! for the suggested Ctrl+Shift bindings to work, a default bindings needs to be disable
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+! display IM 
+! URxvt.perl-ext-common: ..,xim-onthespot,...
+URxvt.inputMethod: fcitx
+URxvt.preeditType: OnTheSpot
+
